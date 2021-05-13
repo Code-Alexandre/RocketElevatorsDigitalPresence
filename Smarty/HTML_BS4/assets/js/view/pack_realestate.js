@@ -233,7 +233,7 @@
 
 		// Morgage Calculator
 		function _mcalc() {
-			var _mcalc_price 		= jQuery("#mcalc-price").val() 		|| 0,			// price
+			var _mcalc_price 		= jQuery("#number-of-floors").val() 		|| 0,			// price
 			 	_mcalc_term 		= jQuery("#mcalc-term").val() 		|| 10,			// term
 			 	_mcalc_dpayment 	= jQuery("#mcalc-dpayment").val() 	|| 0,			// % down payment
 			 	_mcalc_rate 		= jQuery("#mcalc-rate").val() 		|| 0,			// rate
