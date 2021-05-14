@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>RocketElevators - Elevate Safety, Speed and Style</title>
+	<meta name="description" content="" />
+	<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+	<!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<link rel="icon" type="image/png" href="assets/images/Rocket/R2.png">
+	<!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+		rel="stylesheet" type="text/css" />
+
+	<!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- THEME CSS -->
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+
+	<!-- PAGE LEVEL SCRIPTS -->
+	<link href="assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/pack-realestate.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/custom-forms-v2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+	-->
+
+<body class="smoothscroll enable-animation">
+
+	<!-- wrapper -->
+	<div id="wrapper">
+
+		<!-- 
+					AVAILABLE HEADER CLASSES
+	
+					Default nav height: 96px
+					.header-md 		= 70px nav height
+					.header-sm 		= 60px nav height
+	
+					.b-0 		= remove bottom border (only with transparent use)
+					.transparent	= transparent header
+					.translucent	= translucent header
+					.sticky			= sticky header
+					.static			= static header
+					.dark			= dark header
+					.bottom			= header on bottom
+					
+					shadow-before-1 = shadow 1 header top
+					shadow-after-1 	= shadow 1 header bottom
+					shadow-before-2 = shadow 2 header top
+					shadow-after-2 	= shadow 2 header bottom
+					shadow-before-3 = shadow 3 header top
+					shadow-after-3 	= shadow 3 header bottom
+	
+					.clearfix		= required for mobile menu, do not remove!
+	
+					Example Usage:  class="clearfix sticky header-sm transparent b-0"
+				-->
+		<div id="header" class="navbar-toggleable-md sticky clearfix">
+
+			<!-- TOP NAV -->
+			<header id="topNav">
+				<div class="container">
+
+					<!-- Mobile Menu Button -->
+					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<!-- Logo -->
+					<a class="logo float-left scrollTo" href="#top">
+						<img src="assets/images/Rocket/R2.png" alt="" />
+					</a>
+
+					<!-- 
+								Top Nav 
+								
+								AVAILABLE CLASSES:
+								submenu-dark = dark sub menu
+							-->
+					<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+						<nav class="nav-main">
+
+							<!-- 
+										.nav-onepage
+										Required for onepage navigation links
+										
+										Add .external for an external link!
+									-->
+							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+								<li class="active">
+									<!-- HOME -->
+									<a href="index.html">
+										HOME
+									</a>
+								</li>
+								<li>
+									<!-- SERVICES -->
+									<a href="index.html">
+										SERVICES
+									</a>
+								</li>
+								<li>
+									<!-- PORTFOLIO -->
+									<a href="index.html">
+										PORTFOLIO
+									</a>
+								</li>
+								<li>
+									<!-- NEWS -->
+									<a href="index.html">
+										NEWS
+									</a>
+								</li>
+								<li>
+									<!-- CLIENTS -->
+									<a href="index.html">
+										CLIENTS
+									</a>
+								</li>
+								<li>
+									<!-- CONTACT -->
+									<a href="index.html">
+										CONTACT
+									</a>
+								</li>
+							</ul>
+
+						</nav>
+					</div>
+
+				</div>
+			</header>
+			<!-- /Top Nav -->
+
+		</div>
+
+		<!-- MORTGAGE CALCULATOR -->
+		<section id="RocketElevators">
+			<div class="container pt-30 pb-30">
+				<div class="container">
+
+					<div class="heading-title heading-dotted text-center">
+						<h2>Select type of building</h2>
+					</div>
+
+					<div class="text-center">
+						<ul id="building_type" class="nav nav-pills mix-filter mb-60">
+							<li data-filter="residential" class="filter"><a id="residential">Residential</a></li>
+							<li data-filter="commercial" class="filter"><a id="commercial">Commercial</a></li>
+							<li data-filter="corporate" class="filter"><a id="corporate">Corporate</a></li>
+							<li data-filter="hybrid" class="filter"><a id="hybrid">Hybrid</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="row mix-grid">
+
+					<div class="col-md-6">
+
+						<div id="number-input" class="row">
+
+							<div id="number-of-floors" class="col-sm-6 m-0 mix residential commercial hybrid corporate">
+								<label class="fs-12">N. of floors, excluding basements</label>
+								<input id="n-of-floors" type="number" class="form-control" value="">
+							</div>
+
+							<div id="number-of-apartments" class="col-sm-6 m-0 mix residential">
+								<label class="fs-12">N. of apartments</label>
+								<input id="n-of-apartments" type="number" class="form-control" value="">
+							</div>
+
+							<div id="number-of-basements" class="col-sm-6 m-0 mix residential commercial hybrid corporate">
+								<label class="fs-12">N. of basements</label>
+								<input id="n-of-basements" type="number" class="form-control" value="">
+							</div>
+
+							<div id="number-of-companies" class="col-sm-6 m-0 mix hybrid commercial">
+								<label class="fs-12">N. of companies</label>
+								<input id="n-of-companies" type="number" class="form-control" value="">
+							</div>
+
+							<div id="number-of-parking-spots" class="col-sm-6 m-0 mix hybrid corporate commercial">
+								<label class="fs-12">N. of parking spots</label>
+								<input id="n-of-parking-spots" type="number" class="form-control" value="">
+							</div>
+							<div id="number-of-elevator" class="col-sm-6 m-0 mix commercial">
+								<label class="fs-12">N. of Elevator</label>
+								<input id="n-of-elevators" type="number" class="form-control" value="">
+							</div>
+							<div id="maximum-occupancy" class="col-sm-6 m-0 mix hybrid corporate">
+								<label class="fs-12">Maximum Occupancy</label>
+								<input id="max-occupancy" type="number" class="form-control" value="">
+							</div>
+
+							<div id="business-hours" class="col-sm-6 m-0 mix hybrid">
+								<label class="fs-12">Business Hours</label>
+								<input id="b-hours" type="number" class="form-control" value="" min="0" max="24">
+							</div>
+							<div id="number-of-corporations" class="col-sm-6 m-0 mix corporate">
+								<label class="fs-12">N. of Corporations</label>
+								<input id="n-of-corporations" type="number" class="form-control" value="">
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6 mb-30">
+
+
+						<table class="table fs-14 m-0">
+							<tbody>
+								<tr>
+									<td class="b-0 p-3">ELEVATOR AMOUNT</td>
+									<td class="b-0 p-3 text-right text-warning"><span
+											id="elevator-amount">0</span></td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">ELEVATOR UNIT PRICE</td>
+									<td class="b-0 p-3 text-right">$<span id="elevator-unit-price">0</span></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<hr />
+
+						<table class="table fs-14 m-0">
+							<tbody>
+								<tr>
+									<td class="b-0 p-3">ELEVATOR TOTAL PRICE</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="elevator-total-price">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">INSTALLATION FEES</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="installation-fees">0</span></td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">FINAL PRICE</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span id="final-price">0</span>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<form action="" id="planform">
+			
+				<div class="text-center" class="checkbox">
+					<div class="form-check form-check-inline">
+						<input id="standard" class="form-check-input" type="radio" name="inlineRadioOptions" checked
+							value="option1" onclick="onClickService(0)" onchange="_mcalc()"/>
+						<label class="form-check-label" for="standard">Standard</label>
+					</div>
+
+					<div class="form-check form-check-inline">
+						<input id="premium" class="form-check-input" type="radio" name="inlineRadioOptions"
+							value="option2" onclick="onClickService(1)" onchange="_mcalc()"/>
+						<label class="form-check-label" for="premium">Premium</label>
+					</div>
+
+					<div class="form-check form-check-inline">
+						<input id="excelium" class="form-check-input" type="radio" name="inlineRadioOptions"
+							value="option3" onclick="onClickService(2)" onchange="_mcalc()"/>
+						<label class="form-check-label" for="excelium">Excelium</label>
+					</div>
+
+				</div>
+
+			</form>
+
+		</section>
+		<!-- /MORTGAGE CALCULATOR -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="container">
+
+
+				<div class="row">
+
+					<!-- col #1 -->
+					<div class="col-md-8">
+
+						<h3 class="letter-spacing-1">WHY US?</h3>
+
+						<!-- Small Description -->
+						<p>
+							We have the conviction that we create the most innovative and reliable products on the
+							market.
+							Contact us today for any questions you might have.
+						</p>
+						<h2>(418) 555-1234</h2>
+					</div>
+					<!-- /col #1 -->
+
+					<!-- col #2 -->
+					<div class="col-md-4">
+						<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+						<!-- Newsletter Form -->
+						<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+						<form class="validate" action="php/newsletter.php" method="post"
+							data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="email" id="email" name="email" class="form-control required"
+									placeholder="Enter your Email">
+								<span class="input-group-btn">
+									<button class="btn btn-danger" type="submit">Subscribe</button>
+								</span>
+							</div>
+						</form>
+						<!-- /Newsletter Form -->
+
+
+					</div>
+					<!-- /col #2 -->
+
+				</div>
+
+
+			</div>
+
+			<div class="copyright">
+				<div class="container">
+					<ul class="float-right m-0 list-inline mobile-block">
+						<li><a href="#">Terms &amp; Conditions</a></li>
+						<li>&bull;</li>
+						<li><a href="#">Privacy</a></li>
+					</ul>
+					&copy; All Rights Reserved, RocketElevators
+				</div>
+			</div>
+
+		</footer>
+		<!-- /FOOTER -->
+
+	</div>
+	<!-- /wrapper -->
+
+
+	<!-- SCROLL TO TOP -->
+	<a href="#" id="toTop"></a>
+
+
+	<!-- PRELOADER -->
+	<div id="preloader">
+		<div class="inner">
+			<span class="loader"></span>
+		</div>
+	</div><!-- /PRELOADER -->
+
+
+	<!-- JAVASCRIPT FILES -->
+	<script>var plugin_path = 'assets/plugins/';</script>
+	<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/quote.js"></script>
+
+
+	<!-- PAGE LEVEL SCRIPT -->
+	<!--<script async src="assets/js/view/pack_realestate.js"></script>-->
+
+</body>
+
+</html>
