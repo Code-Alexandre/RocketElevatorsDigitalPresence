@@ -352,36 +352,17 @@
 			<div class="container">
 
 				<div class="row">
-					<div class="col-sm-4">
-						<a class="image-hover lightbox"
-							href="https://vimeo.com/ondemand/buildingwithawareness/108669033"
-							data-plugin-options='{"type":"iframe"}'>
-							<span class="image-hover-icon image-hover-dark">
-								<!-- image-hover-light | image-hover-dark -->
-								<i class="fa fa-vimeo-square">
-									<!-- video icon -->
-								</i>
-							</span>
-							<img class="img-fluid" src="assets/images/Rocket/AdobeStock_162479912.jpeg" alt="img" />
-						</a>
-
+					<div class="col-sm-4">												
+						<img class="img-fluid" src="assets/images/Rocket/AdobeStock_162479912.jpeg" alt="img" />
 						<h3 class="mt-10">Awards and Major projects</h3>
 						<p>Rocket Elevators as received multiple awards over the past few years and have completed more
-							project then any other Elevator compagnies.</p>
+							project then any other Elevator companies.</p>
 						<a href="#portfolio" class="btn btn-default">AWARDS AND PROJECTS</a>
 					</div>
 
-					<div class="col-sm-4">
-						<a class="image-hover lightbox" href="https://www.youtube.com/watch?v=ZhCyoDlltbo"
-							data-plugin-options='{"type":"iframe"}'>
-							<span class="image-hover-icon image-hover-dark">
-								<!-- image-hover-light | image-hover-dark -->
-								<i class="fa fa-youtube-square">
-									<!-- video icon -->
-								</i>
-							</span>
-							<img class="img-fluid" src="assets/images/Rocket/Home-Elevator-PVE52.jpg" alt="img" />
-						</a>
+					<div class="col-sm-4">						
+						<img class="img-fluid" src="assets/images/Rocket/Home-Elevator-PVE52.jpg" alt="img" />
+						
 						<h3 class="mt-10">Residential Buildings Services</h3>
 						<p>By Using Pneumatic Technology to Generate Lift, Our Home Elevators Smoothly Move Between
 							Floors While Requiring Much Less Space and Energy Than Traditional Residential.</p>
@@ -878,7 +859,7 @@
 
 
 	<!-- Testimonials -->
-	<section class="section-xs dark" id="team">
+	<section id="team" class="section-xs dark">
 		<div class="container">
 
 			<div class="owl-carousel text-center owl-testimonial m-0"
@@ -1228,41 +1209,41 @@
 
 							<div class="row">
 								<div class="col-md-4">
-									<label for="contact:name">Full Name *</label>
+									<label for="name">Full Name *</label>
 									<input required type="text" value="" class="form-control"
-										name="contact[name][required]" id="contact:name">
+										name="contact[name][required]" id="name">
 								</div>
 								<div class="col-md-4">
-									<label for="contact:email">E-mail Address *</label>
+									<label for="email">E-mail Address *</label>
 									<input required type="email" value="" class="form-control"
-										name="contact[email][required]" id="contact:email">
+										name="contact[email][required]" id="email">
 								</div>
 								<div class="col-md-4">
-									<label for="contact:phone">Phone*</label>
+									<label for="phone">Phone*</label>
 									<input type="text" value="" class="form-control" name="contact[phone]"
-										id="contact:phone">
+										id="phone">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
-									<label for="contact:subject">Company name*</label>
+									<label for="company_name">Company name*</label>
 									<input required type="text" value="" class="form-control"
-										name="contact[name][required]" id="contact:name">
+										name="contact[name][required]" id="company_name">
 								</div>
 								<div class="col-md-4">
-									<label for="contact:subject">Project name*</label>
+									<label for="project_name">Project name*</label>
 									<input required type="text" value="" class="form-control"
-										name="contact[name][required]" id="contact:project name">
+										name="contact[name][required]" id="project_name">
 								</div>
 								<div class="col-md-4">
-									<label for="contact:subject">Project Description*</label>
-									<input required type="text" value="" class="form-control"
-										name="contact[description][required]" id="contact:project description">
+									<label for="project_description">Project Description*</label>
+									<input id="project_description" required type="text" value="" class="form-control"
+										name="contact[description][required]">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<label for="contact_department">Department*</label>
+									<label id="department" for="department">Department*</label>
 									<select class="form-control pointer" name="contact[department]">
 										<option value="">--- Select ---</option>
 										<option value="Residential">Residential</option>
@@ -1274,18 +1255,18 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<label for="contact:message">Message *</label>
+									<label id="message" for="message">Message *</label>
 									<textarea required maxlength="10000" rows="8" class="form-control"
-										name="contact[message]" id="contact:message"></textarea>
+										name="contact[message]" id="message"></textarea>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<label for="contact:attachment">File Attachment</label>
+									<label for="attachment">File Attachment</label>
 
 									<!-- custom file upload -->
-									<input class="custom-file-upload" type="file" id="file" name="contact[attachment]"
-										id="contact:attachment" data-btn-text="Select a File" />
+									<input class="custom-file-upload" type="file" name="contact[attachment]"
+										id="attachment" data-btn-text="Select a File" />
 									<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 								</div>

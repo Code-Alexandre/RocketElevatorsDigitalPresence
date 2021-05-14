@@ -3640,8 +3640,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 	#topNav #topMain>li.mega-menu div.row div>ul>li+li>span {
 		margin-top:25px;
 	}
-
-
+	
 	/* LIGHT SUBMENU */
 	#topNav ul.dropdown-menu a.dropdown-toggle {
 		background-image: url('../images/_smarty/submenu_light.png');

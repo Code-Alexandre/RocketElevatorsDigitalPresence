@@ -8,7 +8,7 @@ button_prices[2] = 15400;   // Excelium
 
 $(document).ready(function () {
 
-    $('#test2').hide();
+    $('#number-input').hide();
     console.log("nimporte");
 
     $('#building_type li').click(function () {
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
         initialize();
 
-        $('#test2').show();
+        $('#number-input').show();
 
     });
 
@@ -55,24 +55,25 @@ jQuery("#n-of-floors, #n-of-apartments, #n-of-basements, #n-of-companies, #n-of-
 
 // Morgage Calculator
 function _mcalc() {
-    var _mcalc_floor = jQuery("#n-of-floors").val() || 10,		// price
-        _mcalc_apartments = jQuery("#n-of-apartments").val() || 10,			// term
-        _mcalc_basements = jQuery("#n-of-basements").val() || 15,			// % down payment
-        _mcalc_companies = jQuery("#n-of-companies").val() || 0,			// rate
-        _mcalc_parking = jQuery("#n-of-parking-spots").val() || 0,			// monthyl charges
+    var _mcalc_floor = jQuery("#n-of-floors").val(),		// price
+        _mcalc_apartments = jQuery("#n-of-apartments").val(),			// term
+        _mcalc_basements = jQuery("#n-of-basements").val(),			// % down payment
+        _mcalc_companies = jQuery("#n-of-companies").val(),			// rate
+        _mcalc_parking = jQuery("#n-of-parking-spots").val(),			// monthyl charges
         _mcalc_elevator = jQuery("#n-of-elevators").val(),
-        _mcalc_occupancy = jQuery("#max-occupancy").val() || 0,
-        _mcalc_hours = jQuery("#b-hours").val() || 0;
+        _mcalc_occupancy = jQuery("#max-occupancy").val(),
+        _mcalc_hours = jQuery("#b-hours").val(),
+        _mcalc_corporations = jQuery("#n-of-corporations").val();
 
     if (typeClient == "commercial") {    
-        var _elevatorAmount = button_prices[optionSelected] ;
+        var _elevatorAmount = _mcalc_elevator ;
         var _elevatorTotalAmount = (_mcalc_elevator * button_prices[optionSelected]) ;
         var _unitPrice = button_prices[optionSelected] ;
         var _feesPrice =  _elevatorTotalAmount * calculFees() ; 
         var _finalPrice =  _elevatorTotalAmount + _feesPrice ;
        
         jQuery("#elevator-unit-price").html(_unitPrice.formatMoney(2, '.', ','));
-        jQuery("#elevator-amount").html(_elevatorAmount.formatMoney(2, '.', ','));
+        jQuery("#elevator-amount").html(_elevatorAmount);
         jQuery("#installation-fees").html(_feesPrice.formatMoney(2, '.', ','));
         jQuery("#elevator-total-price").html(_elevatorTotalAmount.formatMoney(2, '.', ','));
         jQuery("#final-price").html(_finalPrice.formatMoney(2, '.', ','));    
@@ -92,6 +93,56 @@ function _mcalc() {
         jQuery("#final-price").html(_finalPrice.formatMoney(2, '.', ','));    
 
     } 
+    if (typeClient == "corporate") {
+        var _totalOccupancy = (_mcalc_occupancy * (parseInt(_mcalc_floor) + parseInt(_mcalc_basements)));
+        var _mcalc_elevator = _totalOccupancy / 1000 ;
+        var _elevatorTotalAmount = (_mcalc_elevator * button_prices[optionSelected]) ;
+        var _columsRequired = (parseInt(_mcalc_floor) + parseInt(_mcalc_basements)) / 20 ;
+        var _elevatorPer = _mcalc_elevator / _columsRequired;
+        var _nbTotalElevator = _mcalc_elevator * _columsRequired;
+        var _elevatorAmount = _mcalc_elevator ;
+        var _unitPrice = button_prices[optionSelected] ;
+        var _feesPrice =  _elevatorTotalAmount * calculFees() ; 
+        var _finalPrice =  parseInt(_elevatorTotalAmount) + parseInt(_feesPrice) ;
+       
+        console.log('------------------------------------');
+        console.log('_mcalc_occupancy = ' + _mcalc_occupancy) ;
+        console.log('_mcalc_floor = ' + _mcalc_floor) ;
+        console.log('_mcalc_basements = ' + _mcalc_basements) ;
+        console.log('total : ' + (_mcalc_occupancy * (_mcalc_floor + _mcalc_basements)));
+        console.log('------------------------------------');
+
+        console.log('_totalOccupancy = ' + _totalOccupancy) ;
+        console.log('_columsRequired = ' + _columsRequired) ;
+        console.log('_mcalc_elevator = ' + _mcalc_elevator) ;
+        console.log('_elevatorPer =' + _elevatorPer) ;
+        console.log('_nbTotalElevator =' + _nbTotalElevator) ;
+
+        jQuery("#elevator-unit-price").html(_unitPrice.formatMoney(2, '.', ','));
+        jQuery("#elevator-amount").html(_mcalc_elevator);
+        jQuery("#installation-fees").html(_feesPrice.formatMoney(2, '.', ','));
+        jQuery("#elevator-total-price").html(_elevatorTotalAmount.formatMoney(2, '.', ','));
+        jQuery("#final-price").html(_finalPrice.formatMoney(2, '.', ','));    
+        jQuery("").html(_totalOccupancy.formatMoney(2, '.', ','));
+        jQuery("").html(_columsRequired.formatMoney(2, '.', ','));
+        jQuery("").html(_elevatorPer.formatMoney(2, '.', ','));
+        jQuery("").html(_nbTotalElevator.formatMoney(2, '.', ','));
+    }
+    if (typeClient == "hybrid") {
+
+        var _elevatorAmount = button_prices[optionSelected] ;
+        var _elevatorTotalAmount = (_mcalc_elevator * button_prices[optionSelected]) ;
+        var _unitPrice = button_prices[optionSelected] ;
+        var _feesPrice =  _elevatorTotalAmount * calculFees() ; 
+        var _finalPrice =  _elevatorTotalAmount + _feesPrice ;
+       
+        jQuery("#elevator-unit-price").html(_unitPrice.formatMoney(2, '.', ','));
+        jQuery("#elevator-amount").html(_elevatorAmount.formatMoney(2, '.', ','));
+        jQuery("#installation-fees").html(_feesPrice.formatMoney(2, '.', ','));
+        jQuery("#elevator-total-price").html(_elevatorTotalAmount.formatMoney(2, '.', ','));
+        jQuery("#final-price").html(_finalPrice.formatMoney(2, '.', ','));    
+
+    }  
 }
 
 
@@ -127,7 +178,7 @@ function initialize() {
     $("#n-of-floors").prop('value', '');
     $("#n-of-apartments").prop('value', '');
     $("#n-of-basements").prop('value', '');
-    $("#n-of-compagnies").prop('value', '');
+    $("#n-of-companies").prop('value', '');
     $("#n-of-parking-spots").prop('value', '');
     $("#max-occupancy").prop('value', '');
     $("#b-hours").prop('value', '');
